@@ -9,18 +9,13 @@ class BookingRequestQueue {
         queue = new LinkedList<>();
     }
 
-    // Add request
     public void addRequest(Reservation reservation) {
         queue.add(reservation);
         System.out.println("Request added for " + reservation.getGuestName());
     }
 
-    // View all requests
-    public void displayRequests() {
-        System.out.println("\n===== Booking Requests Queue =====");
-
-        for (Reservation r : queue) {
-            System.out.println(r.getGuestName() + " → " + r.getRoomType());
-        }
+    // ✅ REQUIRED for UC6
+    public Queue<Reservation> getQueue() {
+        return queue;
     }
 }
